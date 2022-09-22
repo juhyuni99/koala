@@ -1,0 +1,12 @@
+import sys
+
+n = int(input())
+x =[]
+for i in range(n):
+    a,b = map(int,sys.stdin.readline().split())
+    x.append([a,b])
+x.sort()
+
+for i in range(len(x)):
+    y = x[i]
+    print(y[0],y[1])
