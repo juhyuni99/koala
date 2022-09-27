@@ -1,0 +1,36 @@
+#1874번 스택수열 (LIFO 나중에 들어간게 처음 나옴)
+# push에 해당하는 함수는 append이고, pop은 그대로 pop
+#  pop()에 인자를 지정하지 않으면 스택처럼 가장 마지막에 들어온 인자 꺼냄
+# 첫번째 인자를 꺼내고 싶다면 pop(0)으로 인덱스를 지정
+
+n = int(input())
+count = 0
+stack = []
+result = []
+no_message = True #런타임 에러날수도 있으니 넣어주기
+
+for i in range(0,n):
+    x = int(input())
+
+    while count < x:
+        count += 1
+        stack.append(count)
+        result.append("+")
+
+    if stack[-1]==x: #stack마지막 값과 x가 같다면
+        stack.pop()
+        result.append("-")
+    else: #stack마지막값과 x가 같아지지않는 경우
+        no_message = False
+        exit(0)#다음반복으로 넘어가도록 함
+# exit(0)대신 break를 쓰게 되면 아예 다음 인풋을 입력받지 못하고
+# while반복문을 빠져나가기 때문에 exit(0)으로 써주기.
+if no_message == False:
+    print("no")
+#만약 순서를 지키지 못하는 경우 no출력
+else:
+    print("\n".join(result))
+
+
+
+
