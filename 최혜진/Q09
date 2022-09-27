@@ -1,0 +1,38 @@
+#12891 DNA비밀번호
+#슬라이딩 윈도우 개념
+
+
+import sys
+input = sys.stdin.readline
+
+#DNA문자열 길이, 부분문자열 길이
+S,P = map(int, input().split())
+string = input().rstrip()
+
+a, c, g, t = map(int, input().split())
+
+result = 0
+
+start = string[:P]
+
+#tmp라는 사전 만들어줌/ 각각 몇개 있는 지 세기
+tmp = {"A":0, "C":0, "G":0, "T":0}
+for i in start:
+    tmp[i] += 1
+
+#조건 a,c,g,t에 부합하는지 확인 맞으면, cnt +1
+
+cnt = 0
+if tmp["A"] >= a and tmp["C"] >= c and tmp["G"] >= g and tmp["T"] >= t:
+    cnt += 1
+
+start_idx = 0
+end_idx = start_idx + P
+
+#슬라이딩 윈도우 개념으로 1칸 오른쪽으로 가면 기존구간에 비해 뒤에꺼 1개 추가, 앞에꺼 1개 제외됨
+for i in range(len(string)-P):
+    tmp[string[start_idx+i]] -= 1
+    tmp[string[end_idx+i]] += 1
+    if tmp["A"] >= a and tmp["C"] >= c and tmp["G"] >= g and tmp["T"] >= t:
+        cnt += 1
+print(cnt)
