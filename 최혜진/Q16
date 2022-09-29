@@ -1,0 +1,20 @@
+#DAY08
+#1377번 버블정렬:버블 소트 프로그램
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+num_list = []
+for i in range(n):
+    num_list.append(int(input(),i))
+
+sorted_num_list = sorted(num_list)
+answer=[]
+
+for i in range(n):
+    answer.append(sorted_num_list[i][1]-num_list[i][1])
+
+#1회차만의 버블정렬을 실행하였을 경우
+#가장 큰 값의 +1 해주는 경우 최대값이 된다.
+
+print(max(answer)+1)
