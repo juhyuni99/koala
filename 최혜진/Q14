@@ -1,0 +1,18 @@
+#DAY07
+#11286번 절댓값 힙
+import sys
+import heapq #힙큐 사용
+input = sys.stdin.readline
+
+n = int(input())
+q = [] #빈리스트를 생성한 후 heapq의 함수를 호출할때마다 리스트를 인자에 넘김.
+
+for i in range(n):
+    a = int(input().rstrip()) #rstrip()오른쪽 공백을 삭제
+    if a != 0:
+        heapq.heappush(q,(abs(a),a))
+    else:
+        if not q:
+            print(0)
+        else:
+            print(heapq.heappop(q)[1])
