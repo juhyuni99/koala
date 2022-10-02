@@ -1,0 +1,36 @@
+#11399번 삽입정렬 : ATM 인출 시간 계산하기
+#그리디 방식, 인출시간이 가장 적은 사람이 먼저 인출하도록 순서 정함
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+num_list = list(map(int,input().split()))
+#리스트 합배열
+s = [0]*n
+for i in range(1,n):
+    insert_point = i
+    insert_value = num_list[i]
+    for j in range(i-1,-1,-1):
+        if num_list[j] < num_list[i]:
+            insert_point = j+1
+            break
+        if j == 0:
+            insert_point = 0
+    for j in range(i, insert_point, -1): #뒤에서부터 반복/
+        num_list[j] = num_list[j-1]     #삽입을 위해 삽입위치에서 i까지 데이터를 한칸씩 뒤로 밀기
+    num_list[insert_point] = insert_value   #삽입위치에 현재 데이터 저장
+
+s[0] = num_list[0]
+
+#num_list로 합배열 s 만들기
+#1 2 3 3 4 => 1 3 6 9 13
+for i in range(1,n):
+    s[i] = s[i-1] + num_list[i]
+
+sum = 0
+
+#합배열
+for i in range(0,n):
+    sum += s[i]
+
+print(sum)
