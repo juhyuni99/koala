@@ -1,0 +1,15 @@
+#2751번 수 정렬하기2
+
+import sys
+input = sys.stdin.readline
+
+
+
+n = int(input())
+a= [int(input()) for i in range(n)]
+
+a.sort()
+
+for i in a:
+    print(i)
+
