@@ -11,6 +11,7 @@ public class Day18 {
         int M=scan.nextInt();
         int Ary[]=new int[N];
 
+
         int start=0;
         int end=0;
         for(int i=0;i<N;i++){
