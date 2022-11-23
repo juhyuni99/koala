@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Day23_38 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        long M = scan.nextInt();
-        long N = scan.nextInt();
+        long M = scan.nextLong();
+        long N = scan.nextLong();
         long[] prime = new long[10000001];
 
         for (int i = 2; i < prime.length ; i++) {
