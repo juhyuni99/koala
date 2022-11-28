@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Day01_00 {
     private static Scanner scanner = new Scanner(System.in);
     private static int N;      //입력받을 정수의 갯수
     private static int []num;   //정수 저장 배열

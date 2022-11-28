@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class Day01_02 {
     private static int n;
     private static double[] score;
     private static double max=0;

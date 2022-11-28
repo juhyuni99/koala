@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class Day01_01 {
     private static int n;      //입력받을 숫자의 갯수
     private static char[]num;   //숫자를 저장할 배열
     private static int sum;     //숫자의 총 합
